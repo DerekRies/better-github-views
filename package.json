@@ -1,0 +1,24 @@
+{
+  "name": "better-gh-views",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "esr test.ts",
+    "copy": "cp manifest.json dist/manifest.json",
+    "old:build": "esbuild src/index.tsx --bundle --outdir=dist --define:NODE=false --loader:.tsx=tsx --loader:.ts=ts && npm run copy",
+    "build": "node ./scripts/build.js && npm run copy"
+  },
+  "author": "Derek Ries",
+  "license": "MIT",
+  "dependencies": {
+    "@types/chrome": "0.0.196",
+    "esbuild": "0.15.7",
+    "typescript": "4.8.3"
+  },
+  "devDependencies": {
+    "@types/jsdom": "20.0.0",
+    "esbuild-runner": "2.2.1",
+    "jsdom": "20.0.0"
+  }
+}
