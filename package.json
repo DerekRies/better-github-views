@@ -9,12 +9,11 @@
   ],
   "private": true,
   "scripts": {
-    "test": "esr test.ts",
     "copy": "cp manifest.json dist/manifest.json",
     "old:build": "esbuild src/index.tsx --bundle --outdir=dist --define:NODE=false --loader:.tsx=tsx --loader:.ts=ts && npm run copy",
     "build": "node ./scripts/build.js && npm run copy"
   },
-  "author": "Derek Ries",
+  "author": "Derek Ries <iamderekries@gmail>",
   "license": "MIT",
   "dependencies": {
     "@types/chrome": "0.0.196",
