@@ -1,7 +1,7 @@
 {
   "name": "Better Github Views",
   "description": "Updates the Github Pull Requests dashboard to include Team-based filtering",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "manifest_version": 3,
   "permissions": ["storage"],
   "content_scripts": [
