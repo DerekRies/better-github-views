@@ -2,7 +2,11 @@
   "name": "better-gh-views",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/index.js.map",
+    "dist/manifest.json"
+  ],
   "scripts": {
     "test": "esr test.ts",
     "copy": "cp manifest.json dist/manifest.json",
