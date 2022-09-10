@@ -3,15 +3,11 @@ import { queryForTeamReview } from "../gh-api/utils";
 import { MenuItemProps, Select } from "../gh-views/Select";
 
 export async function pullRequestsPage() {
-  const unfilteredTeams = await getTeams();
-  const teams = unfilteredTeams.filter((team) =>
-    team.qualifiedName.startsWith("elationemr")
-  );
-  console.log("got teams", teams);
+  const teams = await getTeams();
   const items: MenuItemProps[] = teams.map((team) => {
     return {
       avatarUrl: team.avatarUrl,
-      checked: team.qualifiedName === "elationemr/frontend",
+      checked: false,
       href: queryForTeamReview(team.qualifiedName),
       label: team.qualifiedName,
     };
@@ -38,7 +34,7 @@ export async function pullRequestsPage() {
     // not render again at some point in the future.
     const renderedTeamSelect = document.querySelector("#team-select-menu");
     if (renderedTeamSelect == undefined) {
-      console.log("looks like the select was unmounted, rerendering");
+      console.log("Rerendering Team Select");
       render(teamSelect);
     }
   }, 500);

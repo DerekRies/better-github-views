@@ -14,7 +14,6 @@ export class PageRouter {
 
   constructor() {
     this.currentUrl = window.location.href;
-    // this.requestCallback(this.step);
   }
 
   public start() {
@@ -38,17 +37,17 @@ export class PageRouter {
   };
 
   private requestCallback = (fn: (time: number) => void) => {
+    // This could also be an idleCallback or throttled to some
+    // extent, it doesn't really need to run every frame.
+    // But the check (step fn) is fast and trivial so it
+    // really doesn't matter.
     window.requestAnimationFrame(fn);
   };
 
   private handleNavigationChange(path: string) {
-    console.log("handleNavigationChange", path);
-    // Find matching route definitions and invoke
-    // the registered handlers.
     for (let i = 0; i < this.registeredHandlers.length; i++) {
       const [route, handler] = this.registeredHandlers[i];
       if (path.startsWith(route)) {
-        console.log("Registered route: ", route);
         handler();
       }
     }
