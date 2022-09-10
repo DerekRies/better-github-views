@@ -1,3 +1,9 @@
+/**
+ * Augmented from Kartik Nair's blog post
+ * "Using JSX without React"
+ * https://betterprogramming.pub/how-to-use-jsx-without-react-21d23346e5dc
+ */
+
 const appendChild = (parent, child) => {
   if (Array.isArray(child))
     child.forEach((nestedChild) => appendChild(parent, nestedChild));
