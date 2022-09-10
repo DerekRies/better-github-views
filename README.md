@@ -18,4 +18,4 @@ At the moment this only includes an update to the "Pull Requests" Dashboard that
 - `npm install`
 - `npm run build`
 - Follow the [instructions for installing an unpacked extension with chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked).
-  - **Note: Make sure you point this at the dist directory inside the tarball**
+  - **Note: Make sure you point this at the dist directory**
